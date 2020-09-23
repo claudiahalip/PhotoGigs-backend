@@ -3,4 +3,8 @@ class ReviewsController < ApplicationController
         reviews = Review.all 
         render json: reviews, include: [:photographer]
     end 
+
+    def show
+        
+    end
 end
