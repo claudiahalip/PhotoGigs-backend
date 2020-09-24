@@ -15,6 +15,7 @@ class PhotographersController < ApplicationController
             render json: photographer
         else
             render json: {error: "Your list couldn't be added!Please try again"}
+        end
     end
 
     def update
@@ -36,5 +37,5 @@ class PhotographersController < ApplicationController
         params.require(:photographer).permit(:name, :website, :years_of_experience, :city, :state)
     end 
 
-
 end
+
