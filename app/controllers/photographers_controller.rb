@@ -18,23 +18,10 @@ class PhotographersController < ApplicationController
         end
     end
 
-    def update
-        photographer = Photographer.find(params[:id])
-        photographer.update(photographer_params)
-        render json: photographer
-    end 
-
-    def destroy
-       photographer = Photographer.find(params[:id])
-       photographer.destroy
-       render json: {message: "Your list is deleted!"}
-    end 
-
-
     private
 
     def photographer_params
-        params.require(:photographer).permit(:name, :website, :years_of_experience, :city, :state)
+        params.require(:photographer).permit(:name, :website, :years_of_experience, :city, :state, :image)
     end 
 
 end

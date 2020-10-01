@@ -10,6 +10,7 @@ class ReviewsController < ApplicationController
     end
 
     def create
+        puts params
         review = Review.new(review_params)
         if review.save 
             render json: review, include: [:photographer]
